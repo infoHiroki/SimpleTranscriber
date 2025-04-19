@@ -21,7 +21,7 @@
 
 ### 方法1: 実行ファイルを使用 (推奨)
 
-1. [リリースページ](https://github.com/yourusername/SimpleTranscriber/releases)から最新のリリースをダウンロード
+1. [リリースページ](https://github.com/infoHiroki/SimpleTranscriber/releases/tag/v1.0.0)から最新のリリースをダウンロード
 2. `SimpleTranscriber.exe`を実行
 
 ### 方法2: Pythonから実行
