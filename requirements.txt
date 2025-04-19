@@ -1,2 +1,2 @@
-whisper-standalone-win>=1.0.0
+openai-whisper>=20230314
 pyinstaller>=5.0.0

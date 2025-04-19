@@ -8,7 +8,7 @@
 - **複数のモデルサイズ**: 精度と速度のバランスに応じて選択可能
 - **多言語対応**: 日本語、英語、自動検出に対応
 - **FFmpeg内蔵**: 追加のインストールが不要
-- **完全オフライン**: すべての処理をローカルで実行
+- **ローカル処理**: モデル初回ダウンロード後はインターネット接続不要
 - **進捗表示**: 文字起こし処理の進捗を表示
 - **結果保存**: テキストファイルとして結果を保存可能
 
@@ -33,21 +33,22 @@ git clone https://github.com/yourusername/SimpleTranscriber.git
 cd SimpleTranscriber
 
 # 必要なパッケージをインストール
-pip install whisper-standalone-win
+pip install -r requirements.txt
 
 # アプリケーションを実行
-python transcriber_app.py
+python main.py
 ```
 
 ## 使い方
 
-1. 「参照...」ボタンをクリックして音声または動画ファイルを選択
+1. 「ファイルを追加...」ボタンをクリックして音声または動画ファイルを選択
 2. 必要に応じてモデルと言語を選択
-   - モデルサイズ: tiny (最速), base (速い), small (バランス), medium (高精度・低速)
+   - モデルサイズ: tiny (最速), base (速い), small (バランス), medium (高精度), large (最高精度・最低速)
    - 言語: ja (日本語), en (英語), auto (自動検出)
-3. 「文字起こし開始」ボタンをクリック
-4. 文字起こしが完了すると結果が表示される
-5. 「結果を保存」ボタンで結果をテキストファイルとして保存
+3. 必要に応じて出力先を変更
+4. 「文字起こし開始」ボタンをクリック
+5. 文字起こしが完了すると結果が表示される
+6. 「結果を保存」ボタンで結果をテキストファイルとして保存（各ファイルは自動的にも保存されます）
 
 ## ビルド方法
 
@@ -55,7 +56,7 @@ python transcriber_app.py
 
 ```bash
 # 必要なパッケージをインストール
-pip install pyinstaller whisper-standalone-win
+pip install -r requirements.txt
 
 # ビルドスクリプトを実行
 python build.py
@@ -67,6 +68,7 @@ python build.py
 
 - 初回実行時にモデルが自動的にダウンロードされます（インターネット接続が必要）
 - 大きなファイルの処理にはより多くのメモリと時間が必要です
+- 大きなモデル（medium、large）は処理精度が高い反面、メモリ使用量も増加します
 - 静かな環境での録音や、高品質の音声ファイルの方が精度が高くなります
 - コンピューターの性能によっては処理に時間がかかる場合があります
 
@@ -79,4 +81,3 @@ MIT
 このプロジェクトは以下のオープンソースプロジェクトに基づいています：
 
 - [OpenAI Whisper](https://github.com/openai/whisper)
-- [whisper-standalone-win](https://github.com/Purfview/whisper-standalone-win)
