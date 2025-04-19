@@ -22,8 +22,7 @@
 ### 方法1: 実行ファイルを使用 (推奨)
 
 1. [リリースページ](https://github.com/yourusername/SimpleTranscriber/releases)から最新のリリースをダウンロード
-2. ZIPファイルを解凍
-3. `SimpleTranscriber.exe`を実行
+2. `SimpleTranscriber.exe`を実行
 
 ### 方法2: Pythonから実行
 
