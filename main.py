@@ -237,11 +237,10 @@ class WhisperTranscriberApp:
                 # モデルを直接指定してロードする前に、正しいロード方法を試す
                 try:
                     # モデルの読み込み（初回は自動ダウンロード）
-                    self._update_status(f"モデル {model_name} を準備中... （初回実行時はダウンロードが必要です）", 10)
                     model = whisper.load_model(model_name)
                 except Exception as model_error:
                     self._update_status(f"モデルの読み込みに失敗しました: {str(model_error)}", 0)
-                    messagebox.showerror("エラー", f"モデルの読み込みに失敗しました: {str(model_error)}\n\n初回実行時はインターネット接続が必要です。")
+                    messagebox.showerror("エラー", f"モデルの読み込みに失敗しました: {str(model_error)}")
                     return
                 
                 # 文字起こし結果のテキスト
